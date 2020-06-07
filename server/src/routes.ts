@@ -30,7 +30,7 @@ routes.post('/points',
             longitude: Joi.number().required(),
             city: Joi.string().required(),
             uf: Joi.string().required().max(2),
-            items: Joi.string().required()
+            items: Joi.string().required().regex(/^[, 0-9]+$/)
         })
     }, {
         abortEarly: false
